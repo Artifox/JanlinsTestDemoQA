@@ -8,6 +8,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationFromPage;
+import utils.Attach;
 
 public class BaseTest {
 
@@ -31,6 +32,10 @@ public class BaseTest {
 
     @AfterAll
     public static void tearDown(){
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
         WebDriverRunner.getWebDriver().quit();
     }
 }
