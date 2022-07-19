@@ -6,6 +6,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationFromPage;
@@ -31,7 +32,7 @@ public class BaseTest {
         Configuration.holdBrowserOpen = false;
         //TODO: Запихнуть baseWDHubURL в конфиг в Jenkins, но передавать как переменную
         String baseWdHubURL = System.getProperty("baseWdHubURL", "selenoid.autotests.cloud/wd/hub");
-        Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), baseWdHubURL    );
+        Configuration.remote = String.format("https://%s:%s@%s", config.login(), config.password(), baseWdHubURL);
         //"https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
