@@ -14,7 +14,7 @@ import utils.Attach;
 import utils.CredentialsConfig;
 
 public class BaseTest {
-    private static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
+    public static CredentialsConfig config = ConfigFactory.create(CredentialsConfig.class);
     RegistrationFromPage registrationFromPage = new RegistrationFromPage();
 
     @BeforeAll

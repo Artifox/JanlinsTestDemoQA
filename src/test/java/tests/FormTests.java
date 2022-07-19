@@ -14,6 +14,8 @@ public class FormTests extends BaseTest {
     public void fillFormTest() {
         step("Open main page", () -> {
             registrationFromPage.openPage();
+            System.out.println(config.login());
+            System.out.println(config.password());
         });
         step("Fill in the form", () -> {
             registrationFromPage
