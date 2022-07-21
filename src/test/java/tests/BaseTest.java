@@ -31,7 +31,7 @@ public class BaseTest {
         Configuration.browserPosition = "0x0";
         Configuration.holdBrowserOpen = false;
         //TODO: Запихнуть baseWDHubURL в конфиг в Jenkins, но передавать как переменную
-        String baseWdHubURL = System.getProperty("baseWdHubURL");
+        String baseWdHubURL = System.getProperty("baseWdHubURL", "selenoid.autotests.cloud/wd/hub");
         //String username = System.getProperty("login");
         Configuration.remote = String.format("https://user1:1234@%s",baseWdHubURL);//String.format("https://%s:%s@%s", config.login(), config.password(), baseWdHubURL);
         //"https://user1:1234@selenoid.autotests.cloud/wd/hub";
