@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import utils.TestData;
 
 import static io.qameta.allure.Allure.step;
+import static utils.Attach.attachAsText;
 
 public class FormTests extends BaseTest {
 
@@ -14,8 +15,8 @@ public class FormTests extends BaseTest {
     public void fillFormTest() {
         step("Open main page", () -> {
             registrationFromPage.openPage();
-            System.out.println(config.login());
-            System.out.println(config.password());
+            attachAsText("login", System.getProperty("login"));
+            attachAsText("password", System.getProperty("password"));
         });
         step("Fill in the form", () -> {
             registrationFromPage
