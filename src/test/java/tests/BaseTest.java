@@ -27,14 +27,15 @@ public class BaseTest {
 
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.browser = System.getProperty("browser");
+        Configuration.browserVersion = System.getProperty("browserVersion");
+        Configuration.browserSize = System.getProperty("browserSize");
         Configuration.browserPosition = "0x0";
         Configuration.holdBrowserOpen = false;
-        //TODO: Запихнуть baseWDHubURL в конфиг в Jenkins, но передавать как переменную
         String baseWdHubURL = System.getProperty("baseWdHubURL");
         String login = config.login();
         String password = config.password();
-        Configuration.remote = String.format("https://%s:%s@%s", login, password, baseWdHubURL);//String.format("https://%s:%s@%s", config.login(), config.password(), baseWdHubURL);
+        Configuration.remote = String.format("https://%s:%s@%s", login, password, baseWdHubURL);
         //"https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
