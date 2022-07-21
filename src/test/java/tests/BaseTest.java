@@ -25,17 +25,14 @@ public class BaseTest {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
-        Attach.attachAsText("browser", System.getProperty("browser"));
-        Attach.attachAsText("browserVersion", System.getProperty("browserVersion"));
-        Attach.attachAsText("browserSize", System.getProperty("browserSize"));
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browser = System.getProperty("browser");
-        Configuration.browserVersion = System.getProperty("browserVersion");
-        Configuration.browserSize = System.getProperty("browserSize");
+        Configuration.browser = System.getProperty("browser","chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion","100");
+        Configuration.browserSize = System.getProperty("browserSize","1920x1080");
         Configuration.browserPosition = "0x0";
         Configuration.holdBrowserOpen = false;
-        String baseWdHubURL = System.getProperty("baseWdHubURL");
+        String baseWdHubURL = System.getProperty("baseWdHubURL", "selenoid.autotests.cloud/wd/hub");
         String login = config.login();
         String password = config.password();
         Configuration.remote = String.format("https://%s:%s@%s", login, password, baseWdHubURL);
