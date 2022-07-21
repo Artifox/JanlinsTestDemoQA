@@ -25,6 +25,9 @@ public class BaseTest {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
+        Attach.attachAsText("browser", System.getProperty("browser"));
+        Attach.attachAsText("browserVersion", System.getProperty("browserVersion"));
+        Attach.attachAsText("browserSize", System.getProperty("browserSize"));
         Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("browser");
